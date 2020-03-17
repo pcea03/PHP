@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-12">
         <h2>PHP and MySQL CRUD Operations</h2>
-            <div class="pull-right">
+            <div class="pull-left">
             <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal">Add New Record</button>
             </div>
         </div>
@@ -23,9 +23,16 @@
     <div class="row">
         <div class="col-md-12">
         <h4>Records:</h4>
+            <div class="pull-right">
+            <input type="text" name="search" id="search" autocomplete="off" placeholder="search user name here....">
+            </div>
         <div class="records_content"></div>
         </div>
     </div>
+
+
+
+
 </div>
 <!-- /Content Section -->
 
@@ -36,8 +43,9 @@
         <div class="modal-content">
 
             <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             <h4 class="modal-title" id="myModalLabel">Add New Record</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            
             </div>
 
             <div class="modal-body">

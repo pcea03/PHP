@@ -1,6 +1,26 @@
 $(document).ready(function () {
     // READ recods on page load
     readRecords(); // calling function
+
+    //live search
+    $("#search").keyup(function(){
+        var query = $(this).val();
+        if (query != "") {
+          $.ajax({
+            url: 'ajax/liveSearch.php',
+            method: 'POST',
+            data: {query:query},
+            success: function(data){
+
+              $('.records_content').html(data);
+            }
+          });
+        }else{
+            readRecords();
+        }
+    });
+    //end live search
+
 });
 
 // Add Record 
@@ -88,6 +108,7 @@ function UpdateUserDetails() {
             // hide modal popup
             $("#update_user_modal").modal("hide");
             // reload Users by using readRecords();
+            $("#search").val("");
             readRecords();
         }
     );
